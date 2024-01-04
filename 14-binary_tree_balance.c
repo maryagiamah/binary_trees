@@ -1,18 +1,23 @@
 #include "binary_trees.h"
 /**
-* binary_tree_height - returns height of a tree
-* @tree: tree to determine height
-*
-* Return: height of tree
-*/
+ * binary_tree_height - returns height of a tree
+ * @tree: tree to determine height
+ *
+ * Return: height of tree
+ */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+	size_t left_height, right_height;
+
 	if (!tree)
 		return (0);
-	if (!tree->left && !tree->right)
-		return (0);
-	return (1 + (binary_tree_height(tree->right) +
-binary_tree_height(tree->left) + 1) / 2);
+
+	/* Calculate height of left and right subtrees */
+	left_height = binary_tree_height(tree->left);
+	right_height = binary_tree_height(tree->right);
+
+	/* Return the maximum height of left or right subtree, plus 1 for the current node */
+	return (1 + (left_height > right_height ? left_height : right_height));
 }
 
 /**
