@@ -32,9 +32,9 @@ binary_tree_size(tree->left));
  *
  * Return: 1 if perfect, 0 otherwise
  */
-int binary_tree_is_perfect(const binary_tree_t *tree)
+size_t binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int depth, size, max_size;
+	size_t depth, size, max_size;
 
 	depth = binary_tree_depth(tree);
 	size = binary_tree_size(tree);
@@ -47,5 +47,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		depth--;
 	}
 
-	return ((size_t)size == (size_t)max_size);
+	return (size == max_size);
 }
