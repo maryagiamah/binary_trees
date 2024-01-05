@@ -36,12 +36,12 @@ size_t binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	size_t depth, size, max_size;
 
-	depth = binary_tree_depth(tree) + 1;
+	depth = binary_tree_depth(tree);
 	size = binary_tree_size(tree);
 
 	max_size = 1;
 
-	while (depth > 0)
+	while (depth > -1)
 	{
 		max_size *= 2;
 		depth--;
