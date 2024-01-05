@@ -9,10 +9,15 @@ size_t binary_tree_nodes_full(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
-	if (!tree->left || !tree->right)
-		return (0);
-	return (1 + binary_tree_nodes_full(tree->right) +
-binary_tree_nodes_full(tree->left));
+	if (!tree->left && !tree->right)
+		return (1)
+	/* Calculate the heights of left and right subtrees */
+	int left_height = binary_tree_nodes(tree->left);
+	int right_height = binary_tree_nodes(tree->right);
+
+	/* Calculate and return the balance factor */
+	return (left_height && right_height);
+}
 }
 
 /**
@@ -29,5 +34,5 @@ size_t binary_tree_is_full(const binary_tree_t *tree)
 	int right_node = binary_tree_nodes_full(tree->right);
 
 	/* tells if it's a full binary tree */
-	return ((left_node + right_node) % 2);
+	return (left_node && right_node);
 }
