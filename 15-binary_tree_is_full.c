@@ -11,8 +11,8 @@ size_t binary_tree_nodes_full(const binary_tree_t *tree)
 		return (0);
 	if (!tree->left || !tree->right)
 		return (0);
-	return (1 + binary_tree_nodes(tree->right) +
-binary_tree_nodes(tree->left));
+	return (1 + binary_tree_nodes_full(tree->right) +
+binary_tree_nodes_full(tree->left));
 }
 
 /**
