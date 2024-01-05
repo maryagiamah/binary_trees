@@ -1,5 +1,17 @@
-
 #include "binary_trees.h"
+/**
+* binary_tree_depth - returns height of a tree
+* @tree: tree to determine height
+*
+* Return: height of tree
+*/
+size_t binary_tree_depth(const binary_tree_t *tree)
+{
+	if (!tree || !tree->parent)
+		return (0);
+	return (1 + binary_tree_depth(tree->parent));
+}
+
 /**
 * binary_tree_size - returns size of a tree
 * @tree: tree to determine height
@@ -13,6 +25,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	return (1 + binary_tree_size(tree->right) +
 binary_tree_size(tree->left));
 }
+
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
  * @tree: pointer to the root node of the tree to check
@@ -21,16 +34,18 @@ binary_tree_size(tree->left));
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    size_t depth = binary_tree_depth(tree);
-    size_t size = binary_tree_size(tree);
+	int depth, size, max_size;
 
-    size_t max_size = 1;
+	depth = binary_tree_depth(tree);
+	size = binary_tree_size(tree);
 
-    while (depth > 0)
-    {
-        max_size *= 2;
-        depth--;
-    }
+	max_size = 1;
 
-    return (size == max_size);
+	while (depth > 0)
+	{
+		max_size *= 2;
+		depth--;
+	}
+
+	return ((size_t)size == (size_t)max_size);
 }
