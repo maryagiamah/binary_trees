@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
-* binary_tree_nodes - returns height of a tree
+* binary_tree_nodes_full - returns height of a tree
 * @tree: tree to determine height
 *
 * Return: height of tree
@@ -21,7 +21,7 @@ size_t binary_tree_nodes_full(const binary_tree_t *tree)
 
 
 /**
-* binary_tree__is_full - returns size of a tree
+* binary_tree_is_full - returns size of a tree
 * @tree: tree to determine height
 *
 * Return: height of tree
