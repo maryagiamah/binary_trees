@@ -18,7 +18,7 @@ size_t binary_tree_nodes_full(const binary_tree_t *tree)
 	/* Calculate and return the balance factor */
 	return (left_height && right_height);
 }
-}
+
 
 /**
 * binary_tree__is_full - returns size of a tree
