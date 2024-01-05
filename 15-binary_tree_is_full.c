@@ -21,7 +21,7 @@ binary_tree_nodes(tree->left));
 *
 * Return: height of tree
 */
-size_t binary_tree__is_full(const binary_tree_t *tree)
+size_t binary_tree_is_full(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
