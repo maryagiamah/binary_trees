@@ -9,12 +9,12 @@ size_t binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
-	if (!tree->left && !tree->right)
-		return (1);
+	if (!tree->left || !tree->right)
+		return (0);
 	/* Calculate the heights of left and right subtrees */
 	int left_node = binary_tree_is_perfect(tree->left);
 	int right_node = binary_tree_is_perfect(tree->right);
 
 	/* Calculate and return the balance factor */
-	return (left_node && right_node);
+	return (1 && left_node && right_node);
 }
