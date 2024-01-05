@@ -9,12 +9,9 @@ size_t binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
+	if (!(binary_tree_is_perfect(tree->left)) ||
+	!(binary_tree_is_perfect(tree->right)))
+		return (0);
 
-	int left_node = binary_tree_is_perfect(tree->left);
-	int right_node  = binary_tree_is_perfect(tree->right);
-
-	if (!left_node && !right_node)
-		return (1);
-
-	return (0);
+	return (1);
 }
