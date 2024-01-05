@@ -25,8 +25,8 @@ size_t binary_tree__is_full(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
-	int left_node = binary_tree_nodes(tree->left);
-	int right_node = binary_tree_nodes(tree->right);
+	int left_node = binary_tree_nodes_full(tree->left);
+	int right_node = binary_tree_nodes_full(tree->right);
 
 	/* tells if it's a full binary tree */
 	return ((left_node + right_node) % 2);
